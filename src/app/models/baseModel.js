@@ -8,8 +8,7 @@ class BaseModel extends Model {
       },
       {
         ...options,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        
       },
     );
   }
