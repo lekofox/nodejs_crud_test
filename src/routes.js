@@ -9,9 +9,9 @@ routes.post('/v1/users', UserController.store)
     Se nickname já existe, retornar status e mensagem de erro.
  */
 
-routes.get('/v1/users/:name_surname', UserController.UserByRef)
+routes.get('/v1/users/:name_surname', UserController.userByRef)
 
-routes.get('/v1/users/nickname/:nickname', UserController.UserByNickname)
+routes.get('/v1/users/nickname/:nickname', UserController.userByNickname)
 
 routes.put('/v1/users/:id', UserController.update)
 

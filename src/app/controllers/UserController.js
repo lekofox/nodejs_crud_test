@@ -42,9 +42,9 @@ class UserController {
     });
   }
 
-  async UserByRef(req, res) {
+  async userByRef(req, res) {
     const { name_surname } = req.params;
-    const selectedUser = await User.findAll({
+    const selectedUsers = await User.findAll({
 
       where: {
 
@@ -55,13 +55,13 @@ class UserController {
 
       }
     });
-    if (selectedUser == '') {
-      return res.status(404).json({ error: 'Nenhum usuário encontrado com esse nome e/ou sobrenome' });
+    if (selectedUsers == '') {
+      return res.status(404).json({ message: 'Nenhum usuário encontrado com esse nome e/ou sobrenome' });
     }
-    return res.status(200).json([selectedUser]);
+    return res.status(200).json(selectedUsers);
   }
 
-  async UserByNickname(req, res) {
+  async userByNickname(req, res) {
     const { nickname } = req.params;
 
     const selectedUser = await User.findOne({
@@ -168,7 +168,7 @@ class UserController {
         message: 'Erro ao remover; ID selecionado não existe na base',
       });
     await User.destroy({ where: { id } });
-    return res.json({
+    return res.status(200).json({
       message: 'Usuário removido com sucesso',
     });
   }
