@@ -29,32 +29,32 @@ class UserController {
     if (userExist) {
       return res.status(400).json({ error: 'Usuário já existe no sistema' });
     }
-     
+
     const id = uuidv4()
-    
-    const {  name, lastName, nickname, address, bio } = req.body
-    if(nickname.length > 30){
+
+    const { name, lastName, nickname, address, bio } = req.body
+    if (nickname.length > 30) {
       return res.status(400).json({
         message: 'O apelido não pode conter mais que 30 caracteres.'
       })
-  }
-   else if (bio != undefined && bio.length > 100){
-    return res.status(400).json({
-      message: 'A biografia não pode conter mais que 100 caracteres'
-    })
-  }else{
-    
+    }
+    else if (bio != undefined && bio.length > 100) {
+      return res.status(400).json({
+        message: 'A biografia não pode conter mais que 100 caracteres'
+      })
+    } else {
+
       await User.create({ id, name, lastName, nickname, address, bio });
 
-    return res.json({
-      id,
-      name,
-      lastName,
-      nickname,
-      address,
-      bio,
-    });
-  }
+      return res.json({
+        id,
+        name,
+        lastName,
+        nickname,
+        address,
+        bio,
+      });
+    }
   }
 
   async userByRef(req, res) {
@@ -129,39 +129,40 @@ class UserController {
 
   async updateNickname(req, res) {
     const { id } = req.params;
-    const { nickname} = req.body
+    const { nickname } = req.body
     const idUser = await User.findByPk(id);
     const uniqueNickname = await User.findAndCountAll({
-      where: {nickname:nickname}}
+      where: { nickname: nickname }
+    }
     )
-    
-    
+
+
     const schema = await Yup.object().shape({
       nickname: Yup.string().required(),
     });
     if (!idUser)
-    return res.status(404).json({
-      message: 'Erro ao atualizar usuário; ID selecionado não existe em nossa base',
-    });
+      return res.status(404).json({
+        message: 'Erro ao atualizar usuário; ID selecionado não existe em nossa base',
+      });
 
-    if (uniqueNickname.count > 0){
+    if (uniqueNickname.count > 0) {
       return res.status(400).json({
         message: 'Apelido já existe.'
       })
 
-    
 
-    }else if (!(await schema.isValid(req.body))) {
+
+    } else if (!(await schema.isValid(req.body))) {
       return res.status(400).json({
         message: 'Falha na validação; Altere seu apelido, por favor.',
       });
 
 
-      
-    }else if (nickname.length > 30){
-        return res.status(400).json({
-          message: 'O apelido não pode conter mais que 30 caracteres.'
-        })
+
+    } else if (nickname.length > 30) {
+      return res.status(400).json({
+        message: 'O apelido não pode conter mais que 30 caracteres.'
+      })
     }
     else {
       const { name, lastName, nickname, address, bio } =
