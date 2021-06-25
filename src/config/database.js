@@ -1,9 +1,9 @@
 module.exports = {
   dialect: 'mysql',
-  host: '127.0.0.1',
-  username: 'root',
-  password: 'root',
-  database: 'hive_case',
+  host: 'us-cdbr-east-04.cleardb.com',
+  username: 'b8aed87227954b',
+  password: 'a80c29f3',
+  database: 'heroku_d03c0001a2615aa',
   define: {
     timestamps: true,
     underscored: true,
