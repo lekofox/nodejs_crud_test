@@ -173,7 +173,7 @@ class UserController {
 
     } else if (!(await schema.isValid(req.body))) {
       return res.status(400).json({
-        message: 'Falha na validação; Altere seu apelido, por favor.',
+        message: 'Falha na validação; Insira seu apelido, por favor.',
       });
 
 
