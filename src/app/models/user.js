@@ -7,7 +7,7 @@ class User extends Model {
         {
           id: {
             primaryKey: true,
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
           },
           name: Sequelize.STRING,
           lastName: Sequelize.STRING,

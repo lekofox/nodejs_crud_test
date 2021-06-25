@@ -1,16 +1,17 @@
 import User from '../models/user';
 import * as Yup from 'yup';
 import { Op, where } from 'sequelize';
-
+import { v4 as uuidv4 } from 'uuid';
 class UserController {
   async store(req, res) {
 
     const schema = await Yup.object().shape({
-      id: Yup.number(),
+      id: Yup.string(),
       name: Yup.string().required(),
       lastName: Yup.string().required(),
       nickname: Yup.string().required(),
       address: Yup.string().required(),
+      bio: Yup.string()
 
 
     });
@@ -28,18 +29,32 @@ class UserController {
     if (userExist) {
       return res.status(400).json({ error: 'Usuário já existe no sistema' });
     }
-
-    const {  name, lastName, nickname, address, bio } =
-      await User.create(req.body);
+     
+    const id = uuidv4()
+    
+    const {  name, lastName, nickname, address, bio } = req.body
+    if(nickname.length > 30){
+      return res.status(400).json({
+        message: 'O apelido não pode conter mais que 30 caracteres.'
+      })
+  }
+   else if (bio != undefined && bio.length > 100){
+    return res.status(400).json({
+      message: 'A biografia não pode conter mais que 100 caracteres'
+    })
+  }else{
+    
+      await User.create({ id, name, lastName, nickname, address, bio });
 
     return res.json({
-      
+      id,
       name,
       lastName,
       nickname,
       address,
       bio,
     });
+  }
   }
 
   async userByRef(req, res) {
@@ -143,6 +158,10 @@ class UserController {
 
 
       
+    }else if (nickname.length > 30){
+        return res.status(400).json({
+          message: 'O apelido não pode conter mais que 30 caracteres.'
+        })
     }
     else {
       const { name, lastName, nickname, address, bio } =
