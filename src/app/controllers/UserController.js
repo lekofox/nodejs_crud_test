@@ -2,6 +2,7 @@ import User from '../models/user';
 import * as Yup from 'yup';
 import { Op, where } from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
+import sequelize from 'sequelize';
 class UserController {
   async store(req, res) {
 
@@ -63,11 +64,29 @@ class UserController {
 
       where: {
 
+        [Op.or]:{
+
         [Op.or]: [
           { name: name_surname },
-          { lastName: name_surname }
-        ]
-
+          { lastName: name_surname },
+          
+        ],
+        [Op.and]:{
+          query: sequelize.where(
+            sequelize.fn(
+              "concat",
+              sequelize.col("name"),
+              " ",
+              sequelize.col("lastName")
+            ),
+            {
+              [sequelize.Op.like]: name_surname,
+            }
+            ),
+            
+        }
+        
+        }
       }
     });
     if (selectedUsers == '') {
