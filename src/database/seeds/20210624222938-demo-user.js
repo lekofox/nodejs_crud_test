@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -21,10 +21,10 @@ module.exports = {
       bio: 'Caçador de vampiros. O cara certo pra colocar o Leandro em campo',
       createdAt: new Date(),
       updatedAt: new Date()
-    },
-  ]);
+    }
+    ])
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Users', null, {});
+    return queryInterface.bulkDelete('Users', null, {})
   }
-};
+}

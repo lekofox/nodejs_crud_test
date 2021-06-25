@@ -1,17 +1,17 @@
-const { Model } = require('sequelize');
+const { Model } = require('sequelize')
 
 class BaseModel extends Model {
-  static init(schema, options) {
+  static init (schema, options) {
     super.init(
       {
-        ...schema,
+        ...schema
       },
       {
-        ...options,
-        
-      },
-    );
+        ...options
+
+      }
+    )
   }
 }
 
-module.exports = BaseModel;
+module.exports = BaseModel

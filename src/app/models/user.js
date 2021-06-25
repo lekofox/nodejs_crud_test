@@ -1,35 +1,34 @@
-import { Sequelize } from 'sequelize';
-import Model from './baseModel';
+import { Sequelize } from 'sequelize'
+import Model from './baseModel'
 
 class User extends Model {
-  static init(sequelize) {
-      super.init(
-        {
-          id: {
-            primaryKey: true,
-            type: Sequelize.STRING,
-          },
-          name: Sequelize.STRING,
-          lastName: Sequelize.STRING,
-          nickname: {
-            type: 'varchar(30)',
-            unique:true,
-          },
-          address: Sequelize.STRING,
-          bio: {
-            type:'varchar(100)',
-            allowNull: true
-          },
+  static init (sequelize) {
+    super.init(
+      {
+        id: {
+          primaryKey: true,
+          type: Sequelize.STRING
         },
-        {
-          sequelize,
-          underscored: false,
-          tableName: 'Users',
+        name: Sequelize.STRING,
+        lastName: Sequelize.STRING,
+        nickname: {
+          type: 'varchar(30)',
+          unique: true
         },
-      );
-      return this;
+        address: Sequelize.STRING,
+        bio: {
+          type: 'varchar(100)',
+          allowNull: true
+        }
+      },
+      {
+        sequelize,
+        underscored: false,
+        tableName: 'Users'
+      }
+    )
+    return this
   }
-
 }
 
-export default User;
+export default User
