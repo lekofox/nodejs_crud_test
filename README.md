@@ -132,8 +132,8 @@ You can use the same endpoints with http://localhost:3333 (change the src/config
 
 
 ### Seeds Data
-In our seeds you will find a total of 2 users (Leandro Dias, Marcos Allan)
-\If you use Heroku's version, Leandro and Marcos will be there by default too.
+In our seeds you will find a total of 2 users (Leandro Dias, Marcos Allan). \
+If you use Heroku's version, Leandro and Marcos will be there by default too.
 
 ## License
 
