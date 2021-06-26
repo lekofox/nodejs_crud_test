@@ -144,7 +144,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 #### Docker Container
 
-The early idea was building the whole application into a docker-compose file to run in every possible scenario. \
+The first idea was building the whole application into a docker-compose file to run in every possible scenario. \
 I had some problems with the integration between the two images (database and application), so I prefered to just run an docker local image of the database. \
 Future releases should be in a docker-friendly development.
 
