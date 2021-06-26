@@ -131,7 +131,7 @@ You can use the same endpoints with http://localhost:3333 (change the src/config
 |         /v1/users/:id        	| DELETE 	|                                          Deletar um usuário baseado no id recebido como parâmetro de rota: retorna o status de sucesso.                                          	|                                                                                                       	|         http://rest-api-hive-labs.herokuapp.com/v1/users/:id        	|
 
 
-### Seeds Data
+## Seeds Data
 In our seeds you will find a total of 2 users (Leandro Dias, Marcos Allan). \
 If you use Heroku's version, Leandro and Marcos will be there by default too.
 
@@ -140,4 +140,16 @@ If you use Heroku's version, Leandro and Marcos will be there by default too.
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
+## Dev notes
 
+#### Docker Container
+
+The early idea was building the whole application into a docker-compose file to run in every possible scenario. \
+I had some problems with the integration between the two images (database and application), so I prefered to just run an docker local image of the database. \
+Future releases should be in a docker-friendly development.
+
+
+#### Test unit
+Same as docker, the original idea was testing the whole application and build it in a TDD-like pattern. \
+Actually there is a tests/app.test.js and a script to run it, but isnt running in production. \
+I'm curently improving myself and learning TDD to deliver it in future releases

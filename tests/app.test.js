@@ -1,7 +1,7 @@
 // import supertest from 'supertest'
 // import app from '../src/app'
 
-// let users = [1]
+// let users = []
 // beforeEach(() => {
 //   users = [
 //     {
