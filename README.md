@@ -68,7 +68,7 @@ To get a local copy up and running follow these simple example steps.
   npm install sequelize-cli -g
   ```
 
-### Installation
+### Installation (local)
 
 1. Clone the repo
    ```sh
@@ -114,7 +114,7 @@ To run this project remotely follow these simple example steps.
 
 ### Using
 
-Do an HTTP request with Insomnia (or your favorite API client) as below.
+Do an HTTP request with Insomnia (or your favorite API client) as below.\
 You can use the same endpoints with http://localhost:3333 (change the src/config/database.js to docker credentials with root user and password )
 
 
@@ -132,7 +132,8 @@ You can use the same endpoints with http://localhost:3333 (change the src/config
 
 
 ### Seeds Data
-In our seeds you will find a total of 2 users (Leandro Dias, Marcos Allan); If you use Heroku's version, Leandro and Marcos will be there by default too.
+In our seeds you will find a total of 2 users (Leandro Dias, Marcos Allan)
+\If you use Heroku's version, Leandro and Marcos will be there by default too.
 
 ## License
 
