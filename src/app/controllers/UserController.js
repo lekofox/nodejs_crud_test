@@ -55,7 +55,7 @@ class UserController {
       }
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 
@@ -99,7 +99,7 @@ class UserController {
       return res.status(200).json(selectedUsers)
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 
@@ -119,7 +119,7 @@ class UserController {
       return res.status(200).json([selectedUser])
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 
@@ -159,7 +159,7 @@ class UserController {
       }
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 
@@ -209,7 +209,7 @@ class UserController {
       }
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 
@@ -229,7 +229,7 @@ class UserController {
       })
     } catch (error) {
       res.status(500)
-      res.json('A sua requisição não foi processada; Por favor tente novamente.')
+      res.json({ message: 'A sua requisição não foi processada; Por favor tente novamente.' })
     }
   }
 }
