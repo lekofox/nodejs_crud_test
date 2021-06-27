@@ -18,22 +18,29 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation-locally">Installation locally</a></li>
       </ul>
     <li>
-      <a href="#getting-started-Heroku">Running Live (Heroku)</a>
+      <a href="#getting-started-with-heroku">Getting started (Heroku)</a>
       <ul>
         <li><a href="#prerequisites-heroku">Prerequisites</a></li>
         <li><a href="#using">Using</a></li>
       </ul>
     </li>
+    <li><a href="#test-case">Test cases</a></li>
+    <ul><li><a href="#seeds-data">Seeds data</li></ul>
     <li><a href="#license">License</a></li>
+    <li><a href="#dev-notes">Dev Notes</a></li>
+    <ul>
+        <li><a href="#docker-container">Docker Container</a></li>
+        <li><a href="#test-unit">Unit Test</a></li>
+      </ul>
   </ol>
 </details>
 
 ## About The Project
 
-This is a Ecommerce Project developed with Node.js and Mysql, it's possible add new products, change, delete & get them.  
+This is an RESTful API Project developed with Node.js and MySQL, it's possible add new products, change, delete & get them.  
 
 ### Built With
 
@@ -58,7 +65,6 @@ To get a local copy up and running follow these simple example steps.
   ```sh
   https://www.docker.com/products/docker-desktop
   ```
-
 - npm
   ```sh
   npm install npm@latest -g
@@ -68,7 +74,7 @@ To get a local copy up and running follow these simple example steps.
   npm install sequelize-cli -g
   ```
 
-### Installation (local)
+### Installation locally
 
 1. Clone the repo
    ```sh
@@ -92,14 +98,14 @@ To get a local copy up and running follow these simple example steps.
    ```
 7. start the project
    ```JS
-   npm run dev
+   npm start
    ```
-## Getting Started (Heroku)
+## Getting Started with Heroku
 
 This is an example of how you may run this project in production state.
 To run this project remotely follow these simple example steps.
 
-### Prerequisites
+### Prerequisites Heroku
 
 - Insomnia or Postman
   ```sh
@@ -107,7 +113,7 @@ To run this project remotely follow these simple example steps.
   https://www.postman.com/downloads/
   ```
 
-- Beekeper Studio (To check data on database)
+- Beekeper Studio (To check data in database)
   ```sh
   https://www.beekeeperstudio.io/
   ```
@@ -115,7 +121,7 @@ To run this project remotely follow these simple example steps.
 ### Using
 
 Do an HTTP request with Insomnia (or your favorite API client) as below.\
-You can use the same endpoints with http://localhost:3333 (change the src/config/database.js to docker credentials with root user and password )
+You can use the same endpoints with http://localhost:3333
 
 
 

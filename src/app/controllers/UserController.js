@@ -59,7 +59,7 @@ class UserController {
     }
   }
 
-  async userByRef (req, res) {
+  async userByNameSurname (req, res) {
     try {
       const { nameSurname } = req.params
       const selectedUsers = await User.findAll({
