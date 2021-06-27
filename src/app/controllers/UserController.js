@@ -181,7 +181,12 @@ class UserController {
           message: 'Erro ao atualizar usuário; ID selecionado não existe em nossa base'
         })
       }
-
+      // eslint-disable-next-line eqeqeq
+      if (idUser.nickname == nickname) {
+        return res.status(400).json({
+          message: 'Seu novo apelido não pode ser o mesmo.'
+        })
+      }
       if (uniqueNickname.count > 0) {
         return res.status(400).json({
           message: 'Apelido já existe.'
