@@ -57,7 +57,7 @@ This is an RESTful API Project developed with Node.js and MySQL, it's possible a
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps. If you run into database-side errors, please change the credentials in database.js to root user and password with localhost. 
 
 ### Prerequisites
 
@@ -120,7 +120,8 @@ To run this project remotely follow these simple example steps.
 
 ### Using
 
-Do an HTTP request with Insomnia (or your favorite API client) as below.\
+To see the full docs with Swagger, please visit http://rest-api-hive-labs.herokuapp.com/docs-api/#/ \
+You can also do a HTTP request with Insomnia (or your favorite API client) as below.\
 You can use the same endpoints with http://localhost:3333
 
 

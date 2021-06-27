@@ -2,12 +2,12 @@ import { Router } from 'express'
 import UserController from './app/controllers/UserController'
 const swaggerJSDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
+const routes = new Router()
 
 // Extended: https://swagger.io/specification/#infoObject
 const options = {
   swaggerDefinition: {
-    apiSorter: 'alpha',
-    operationSorter: 'method',
+
     info: {
       title: 'RESTful API for Hive Labs case',
       description: 'CRUD simulating a profile-like data created with Node.js and MySQL ',
@@ -16,12 +16,12 @@ const options = {
         email: 'leandro_dias9@hotmail.com'
       },
       servers: ['http://localhost:3333/', 'http://rest-api-hive-labs.herokuapp.com']
+
     }
   },
   apis: ['./src/routes.js']
 }
 
-const routes = new Router()
 const swaggerDocs = swaggerJSDoc(options)
 
 routes.get('/', (req, res) => res.status(200).json({ message: 'Please select a correct URI to use; you can see more in our documentation (http://rest-api-hive-labs.herokuapp.com/docs-api)' }))
